@@ -1,16 +1,15 @@
-import { unique } from 'next/dist/build/utils'
 import type { CollectionConfig } from 'payload'
 
 export const Categories: CollectionConfig = {
-  slug: 'categories',
+  slug: "categories",
   fields: [
     {
-      name: 'name',
-      type: 'text',
+      name: "name",
+      type: "text",
       required: true,
     },
     {
-      name: 'slug',
+      name: "slug",
       type: "text",
       required: true,
       unique: true,
@@ -27,7 +26,7 @@ export const Categories: CollectionConfig = {
       hasMany: false,
     },
     {
-      name: "subcategoreis",
+      name: "subcategories",
       type: "join",
       collection: "categories",
       on: "parent",
