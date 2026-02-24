@@ -1,7 +1,7 @@
 import {
     ProductList,
     ProductListSkeleton,
-} from "@/modules/products/ui/product-list";
+} from "@/modules/products/ui/components/product-list";
 
 import { getQueryClient, trpc } from "@/trpc/server";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
