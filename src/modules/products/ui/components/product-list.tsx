@@ -6,6 +6,7 @@ import { useProductFilters } from "../../hooks/use-product-filters";
 import { ProductCard, ProductCardSkeleton } from "./product-card";
 import { DEFAULT_LIMIT } from "@/constants";
 import { InboxIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface Props {
     category? : string;
@@ -15,7 +16,12 @@ export const ProductList = ({ category }: Props) => {
     const [filters] = useProductFilters();
 
     const trpc = useTRPC();
-    const { data } = useSuspenseInfiniteQuery(trpc.products.getMany.infiniteQueryOptions(
+    const { 
+        data,
+        hasNextPage,
+        isFetchingNextPage,
+        fetchNextPage
+     } = useSuspenseInfiniteQuery(trpc.products.getMany.infiniteQueryOptions(
         {
             category,
             ...filters,
@@ -38,6 +44,7 @@ export const ProductList = ({ category }: Props) => {
     }
 
     return (
+        <>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4">
             {data?.pages.flatMap((page) => page.docs).map((product) => (
                     <ProductCard 
@@ -53,6 +60,19 @@ export const ProductList = ({ category }: Props) => {
                     />
             ))}
         </div>
+        <div className="flex justify-center pt-8">
+        {hasNextPage && (
+          <Button
+            disabled={isFetchingNextPage}
+            onClick={() => fetchNextPage()}
+            className="font-medium disabled:opacity-50 text-base bg-white"
+            variant="elevated"
+          >
+            Load more
+          </Button>
+        )}
+      </div>
+    </>
     );
 };
 
