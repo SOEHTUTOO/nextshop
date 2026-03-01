@@ -11,6 +11,7 @@ import { useState } from "react";
 import { MenuIcon } from "lucide-react";
 import { useTRPC } from "@/trpc/client";
 import { useQuery } from "@tanstack/react-query";
+import { SHOP_NAME } from "@/constants";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -61,7 +62,7 @@ export const Navbar = () => {
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
             <Link href="/" className="pl-6 flex items-center">
                 <span className={cn("text-5xl font-semibold,", poppins.className)}>
-                    nextshop
+                    {SHOP_NAME}
                 </span>
             </Link>
 

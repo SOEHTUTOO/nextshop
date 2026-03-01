@@ -4,14 +4,15 @@ import "./globals.css";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { TRPCReactProvider } from "@/trpc/client";
 import { Toaster } from "@/components/ui/sonner";
+import { SHOP_DESCRIPTION, SHOP_NAME } from "@/constants";
 
 const dmSans = DM_Sans ({
   subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
-  title: "Next Shop",
-  description: "nextshop, the best shop",
+  title: SHOP_NAME,
+  description: SHOP_DESCRIPTION,
 };
 
 export default function RootLayout({

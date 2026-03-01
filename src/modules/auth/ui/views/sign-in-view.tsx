@@ -25,6 +25,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { useRouter } from "next/navigation";
+import { SHOP_NAME } from "@/constants";
 
 
 
@@ -73,7 +74,7 @@ export const SignInView = () => {
                         <div className="flex items-center justify-between mb-8">
                             <Link href="/">
                                 <span className={cn("text-2xl font-semibold", poppins.className)}>
-                                    nextshop
+                                    {SHOP_NAME}
                                 </span>
                             </Link>
                             <Button
