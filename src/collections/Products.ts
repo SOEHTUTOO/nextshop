@@ -14,7 +14,8 @@ export const Prodcuts: CollectionConfig = {
         }
     },
     admin: {
-        useAsTitle: "name"
+        useAsTitle: "name",
+        description: "You must verify your account before creationg products"
     },
     fields: [
         {
