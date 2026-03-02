@@ -5,7 +5,7 @@ import { ProductSort } from "../components/product-sort"
 
 interface Props {
     category?: string;
-    tenantSlug: string;
+    tenantSlug?: string;
     narrowView?: boolean;
 }
 
