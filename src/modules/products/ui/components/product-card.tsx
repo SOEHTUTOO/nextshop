@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-// TODO: add real rating
-
 interface ProductCardProps {
     id: string;
     name: string;
