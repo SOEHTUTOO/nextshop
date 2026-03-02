@@ -112,20 +112,20 @@ export const ProductView = ({ productId, tenantSlug }: ProdcuctViewProps) => {
                         <div className="border-t lg:border-t-0 lg:border-l h-full">
                             <div className="flex flex-col gap-4 p-6 border-b">
                                 <div className="flex felx-row items-center gap-2">
-                                    <CartButton 
-                                        productId={productId}
-                                        tenantSlug={tenantSlug}
-                                    />
-
-                                    <Button
-                                        className="size-12"
-                                        variant="elevated"
-                                        onClick={() => {}}
-                                        disabled={false}
-                                    >
-                                        <LinkIcon />
-                                    </Button>
-                                </div>
+                                            <CartButton
+                                                isPurchased={data.isPurchased}
+                                                productId={productId}
+                                                tenantSlug={tenantSlug}
+                                            />
+                                            <Button
+                                                className="size-12"
+                                                variant="elevated"
+                                                onClick={() => {}}
+                                                disabled={false}
+                                            >
+                                                <LinkIcon />
+                                            </Button>
+                                        </div>
 
                                 <p className="text-center font-medium">
                                     {data.refundPolicy === "no-refunds"
