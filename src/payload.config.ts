@@ -5,7 +5,6 @@ import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
 import { multiTenantPlugin } from "@payloadcms/plugin-multi-tenant"
-
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Categories } from "./collections/Categories";
