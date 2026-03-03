@@ -97,7 +97,7 @@ export const SignUpView = () => {
                         </div>
 
                         <h1 className="text-4xl font-medium">
-                            Meet with your clients on nextshop.
+                            Meet with your clients on {SHOP_NAME}.
                         </h1>
 
                         <FormField 
