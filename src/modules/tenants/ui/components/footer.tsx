@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils";
+import { SHOP_NAME } from "@/constants";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -13,9 +14,9 @@ export const Footer = () => {
         <footer className="border-t font-medium bg-white">
             <div className="max-w-(--breakpoint-xl) mx-auto flex items-center h-full gap-2 px-4 py-6 lg:px-12">
                 <p>Powered by </p>
-                <Link href="/">
+                <Link href="{process.env.NEXT_PUBLIC_APP_URL!}">
                     <span className={cn("text-xl font-semibold", poppins.className)}>
-                        nextshop
+                        {SHOP_NAME}
                     </span>
                 </Link>
             </div>
