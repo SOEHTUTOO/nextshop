@@ -13,18 +13,18 @@ export const config = {
   ],
 };
 
-export default async function proxy(req: NextRequest) {
-    const url = req.nextUrl;
-    // Extract the hostname (e.g. test.nextshop.com or "test.localhost:3000")
-    const hostname = req.headers.get("host") || "";
+// export default async function proxy(req: NextRequest) {
+//     const url = req.nextUrl;
+//     // Extract the hostname (e.g. test.nextshop.com or "test.localhost:3000")
+//     const hostname = req.headers.get("host") || "";
 
-    const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "";
+//     const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN || "";
 
-    if(hostname.endsWith(`.${rootDomain}`)) {
-        const tenantSlug = hostname.replace(`.${rootDomain}`, "");
+//     if(hostname.endsWith(`.${rootDomain}`)) {
+//         const tenantSlug = hostname.replace(`.${rootDomain}`, "");
         
-        return NextResponse.rewrite(new URL(`/tenants/${tenantSlug}${url.pathname}`, req.url));
-    }
+//         return NextResponse.rewrite(new URL(`/tenants/${tenantSlug}${url.pathname}`, req.url));
+//     }
 
-    return NextResponse.next();
-}
+//     return NextResponse.next();
+// }
