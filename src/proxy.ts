@@ -10,7 +10,7 @@ export const config = {
         * 4. all root files inside /public (e.g. /favicon.icon)
         */
        "/((?!api/|_next/|_static/|_vercel|media/|[\\w-]+\\.\\w+).*)",
-    ],
+  ],
 };
 
 export default async function proxy(req: NextRequest) {
