@@ -147,11 +147,11 @@ export const checkoutRouter = createTRPCRouter({
 
       let domain = generateTenantURL(input.tenantSlug);
 
-      if(process.env.NODE_ENV === "development") {
+      // if(process.env.NODE_ENV === "development") {
         domain = `${process.env.NEXT_PUBLIC_APP_URL}/tenants/${input.tenantSlug}`;
-      } else {
-        domain = `${input.tenantSlug}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`;
-      }
+      // } else {
+        // domain = `${input.tenantSlug}.${process.env.NEXT_PUBLIC_ROOT_DOMAIN}`;
+      // }
 
       const checkout = await stripe.checkout.sessions.create({
         customer_email: ctx.session.user.email,
