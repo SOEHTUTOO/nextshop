@@ -13,7 +13,7 @@ export const config = {
     ],
 };
 
-export default async function middleware(req: NextRequest) {
+export default async function proxy(req: NextRequest) {
     const url = req.nextUrl;
     // Extract the hostname (e.g. test.nextshop.com or "test.localhost:3000")
     const hostname = req.headers.get("host") || "";
